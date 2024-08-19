@@ -174,3 +174,31 @@ console.log(todo)
 
 todo.unshift('journal', 'meditate')
 console.log(todo)
+
+let fruits = ['apple', 'orange']
+let veggies = ['spinich', 'peas']
+let meats = ['chix', 'turkey']
+
+console.log(fruits, veggies, meats)
+
+//order matters
+let AllFoodFruit = fruits.concat(meats, veggies)
+let AllFoodMeat = meats.concat(veggies, fruits)
+console.log('prioritze fruit=', AllFoodFruit, 'prioritize meat = ', AllFoodMeat)
+
+let ingredients = [
+    'water',
+    'corn starch',
+    'flour',
+    'cheese',
+    'brown sugar',
+    'shrimp',
+    'eel',
+    'butter'
+]
+
+console.log(ingredients.indexOf('water', 'indexOf'))
+console.log(ingredients.includes('water', 'includes'))
+if (ingredients.includes('cheese')){
+    console.log('contains cheese. Do not eat')
+}
