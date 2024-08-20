@@ -202,3 +202,5 @@ console.log(ingredients.includes('water', 'includes'))
 if (ingredients.includes('cheese')){
     console.log('contains cheese. Do not eat')
 }
+
+//reviewed loops 8/19
