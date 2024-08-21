@@ -204,3 +204,49 @@ if (ingredients.includes('cheese')){
 }
 
 //reviewed loops 8/19
+//reviewed functions 8/20
+
+let randomNum = Math.floor(Math.random() *6) +1
+console.log(randomNum, 'random number')
+
+console.log(typeof(5), 'typeof numb')
+console.log(typeof('he'), 'typeof string')
+console.log(parseInt('245days'), 'retrieving num')
+
+//always use triple equal for comparison ===
+
+let ages =32
+if(ages === 3){
+    console.log(`you are ${ages}`)
+}
+else{
+    console.log('you are NOT 3')
+}
+
+let colors = ['red', 'blue', 'orange', 'pink', 'yellow']
+console.log(colors, 'initial colors')
+console.log(colors.length, 'length of colors')
+console.log(colors[2], 'item at position 2')
+console.log(colors.length-1, 'return last indexin array')
+colors[3] = 'violet'
+console.log(colors, 'colors update')
+console.log(colors[colors.length-1] = 'black', 'updating last color')
+console.log(colors)
+
+let letters = ['T', 'C', 'E', 'P', 'S', 'E', 'R']
+console.log(letters, 'initial letters')
+console.log(letters.reverse(),  'letters reversed')
+console.log(letters.join(' '), 'joining letters from arrary')
+
+let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortise']
+console.log(animals, 'here are animals')
+let swimmers = animals.slice(0, 3)
+let bearsPlus = animals.slice(3)
+let lastAnimal = animals.slice(-1)
+let last3Animals = animals.slice(-3)
+let whaleLizard = animals.slice(-4,-3)
+console.log(swimmers, 'swimmers')
+console.log(bearsPlus, 'everything starting from bear and after')
+console.log(lastAnimal, 'last animal')
+console.log(last3Animals, 'last3Animals')
+console.log(whaleLizard, 'from whale to lizard')
