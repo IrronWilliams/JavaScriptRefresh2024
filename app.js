@@ -250,3 +250,42 @@ console.log(bearsPlus, 'everything starting from bear and after')
 console.log(lastAnimal, 'last animal')
 console.log(last3Animals, 'last3Animals')
 console.log(whaleLizard, 'from whale to lizard')
+
+let animalCopy = animals.slice()
+console.log(animalCopy, 'copy of animals')
+
+animals.push('panther')
+console.log(animals, 'original animals')
+console.log(animalCopy, 'animal copy')
+
+let letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+console.log(letter, 'initial letter')
+updatedLetter = letter.splice(0,0,100)
+console.log(updatedLetter, 'updated letter')
+console.log(letter, 'added 100')
+
+let remove100 = letter.splice(0,1)
+console.log(remove100, 'removing 100')
+console.log(letter, 'confirming 100 removed')
+
+letter.splice(letter.length, 0, 'h')
+console.log(letter, 'adding h to end')
+
+console.log(letter.length, 'length of letter')
+
+let removeMiddle = letter.splice(2, 2, "C", "D")
+console.log(removeMiddle, 'removed c, d')
+console.log(letter, 'confirming caps added')
+
+
+const animalPairs = [
+    ['doe', 'buck'],
+    ['ewe', 'ram'],
+    ['peahen', 'peacock']
+]
+// console.log(animalPairs)
+let peacock = animalPairs[2][1]
+console.log(peacock, 'found peacock')
+
+animalPairs[0][2] = 'stag'
+console.log(animalPairs[0][2])
