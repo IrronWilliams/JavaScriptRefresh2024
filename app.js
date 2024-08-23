@@ -289,3 +289,53 @@ console.log(peacock, 'found peacock')
 
 animalPairs[0][2] = 'stag'
 console.log(animalPairs[0][2])
+
+
+const palette = {
+    red: '#eb4d4b',
+    yellow: '#f9ca24',
+    blue:'#30336b'
+}
+
+console.log(palette)
+palette.pink = 'pink'
+console.log(palette)
+palette.seven = 7
+
+console.log(palette)
+palette.seven +=3
+console.log(palette)
+
+const student = {
+    'firstName': 'Glenn',
+    'lastName': 'Jones',
+    'talents': ['History', 'Language'],
+    exams: {
+        'midterm': 92,
+        'final': 78
+    }
+}
+
+let finalGrade = (student.exams.midterm+student.exams.final)/2
+console.log(finalGrade)
+
+let nums = [1, 2, 3]
+let mystery = [1, 2, 3]
+console.log(nums === mystery)
+let moreNums = nums
+console.log(moreNums === nums)
+console.log(nums, 'numsArray', moreNums, 'moreNumsArray')
+nums.push(11)
+console.log(nums, 'numsArray', moreNums, 'moreNumsArray')
+moreNums.push('11')
+console.log(nums, 'numsArray', moreNums, 'moreNumsArray')
+
+
+const user = {
+    userName:   'gwizz4nbs',
+    email: 'gry@msn',
+    notifications: [1]
+
+}
+
+console.log(user.notifications.length ===0)
