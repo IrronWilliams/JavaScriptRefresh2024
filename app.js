@@ -338,4 +338,203 @@ const user = {
 
 }
 
-console.log(user.notifications.length ===0)
+// console.log(user.notifications.length ===0)
+
+// for(let i=1; i<=10; i++){console.log('Hello')}
+// for(let i=1; i<=10; i++){console.log('hello', i)}
+// for(let i=1; i<=10; i+=3){console.log('hey', i)}
+
+// for(let i=1; i<=20; i++){
+//     console.log(`${i} x ${i} = ${i*i}`)
+// }
+
+// for(let i=50; i>=0; i-=2){console.log(i, 'declining')}
+
+// let animalss = ['lions', 'tigers', 'bears']
+// for(let i=0; i<=animalss.length-1; i++){
+//     console.log(`${i}-${animalss[i]}`)
+// }
+
+// const myStudents = [
+//     {firstName: 'Zeus', grade: 87},
+//     {firstName: 'Artemis', grade: 97},
+//     {firstName: 'Hera', grade: 77},
+//     {firstName: 'Apollo', grade: 92}
+
+// ]
+// for(let i=0; i<=myStudents.length-1; i++){console.log(i, myStudents[i])}
+// for(let i=0; i<=myStudents.length-1; i++){
+//     let student = myStudents[i]
+//     console.log(`${student.firstName} - ${student.grade}`)
+// }
+
+// let totalGrade =0
+// for(let i=0; i<=myStudents.length-1; i++){
+//     let student = myStudents[i]
+//     totalGrade += student.grade
+//     console.log(student, totalGrade)
+
+// }
+// console.log(totalGrade, 'finalGrade')
+// console.log(totalGrade/myStudents.length, 'avg grade')
+
+// const word = 'stressed'
+// for(i=0; i<=word.length; i++){console.log(word[i])}
+// for(let i=word.length-1; i>0; i--){console.log(word[i])}
+// let reverseWord = ''
+// for(let i=word.length-1; i>0; i-- ){
+//     reverseWord +=word[i]
+//     console.log(reverseWord)
+// }
+// console.log(reverseWord)
+// for(let i=1; i<=20; i++){
+//     console.log('Outerloop', i)
+//     for(let j=10; j>0; j-=2){
+//         console.log('  Inner loop', j)
+//     }
+// }
+
+// const gameBoard = [
+//     [4, 32, 8, 4],
+//     [64, 8, 32,2],
+//     [8, 32, 16, 4],
+//     [2, 8, 4, 2],
+// ]
+// for(let i=0; i<gameBoard.length; i++){console.log(i, gameBoard[i])}
+
+// for(let i=0; i<gameBoard.length; i++){
+//     let row = gameBoard[i]
+//     console.log(row, 'row')
+//     for(let j=0; j<row.length; j++){
+//         console.log(row[j])
+//     }
+// }
+// let totalScore = 0
+// for(let i=0; i<gameBoard.length; i++){
+//     let row = gameBoard[i]
+//     for(let j=0; j<row.length; j++){
+//         totalScore += row[j]
+//         console.log(totalScore)
+//     }
+// }
+// console.log(totalScore, 'totalScore')
+// let totalGame = 0
+// for(let i=0; i<=gameBoard.length; i++){
+//     let row = gameBoard[i]
+//     console.log(row)
+//     for(let j=0; j<=row.length; j++){
+//         totalGame += row[j]
+//         console.log(totalGame)
+//     }
+// }
+// console.log(totalGame)
+
+// let numz=0
+// while (numz<10){
+//     console.log(numz, 'while loop')
+//     numz++
+// }
+// for(let i=0; i<10; i++){console.log(i, 'for loop')}
+
+// const target = Math.floor(Math.random() *10)
+// let guess = Math.floor(Math.random() *10)
+// console.log('target=', target)
+// while(guess !== target){
+//     console.log(`target: ${target}, guess: ${guess}`)
+//     guess = Math.floor(Math.random()*10)
+//     // console.log(guess)
+// }
+
+// console.log(`Target: ${target}, Guess: ${guess}`)
+
+// let subreddits = ['soccer', 'popheads', 'cringe', 'books']
+// for(let i=0; i<subreddits.length; i++){console.log(subreddits[i], 'for loop')}
+// for(let sub of subreddits){console.log(sub, 'for of loop')}
+// for (let char of 'cockadoodledoo'){console.log(char)}
+
+// let magicSquare = [ [2,7,6], [9,5,1], [4,3,8] ]
+// for(let i=0; i<magicSquare.length; i++){
+//     let row =magicSquare[i]
+//     let total =0
+//     for(j=0; j<row.length; j++){
+//         total += row[j]
+//     }
+//     console.log(`${row} summed to ${total}`)
+// }
+
+// for(let row of magicSquare){
+//     let total = 0
+//     for(let num of row ){
+//         total += num
+//         // console.log(total)
+//     }
+
+//     console.log(row, total)
+// }
+
+// const words1 = ['mail', 'milk', 'bath', 'black']
+// const words2 = ['box', 'shake', 'tub', 'berry']
+// for(let i=0; i<words1.length; i++){
+//     console.log(`${words1[i]} - ${words2[i]}`)
+// }
+
+let movieReviews = {
+    Arrival: 9.5,
+    Alien: 9,
+    Amelie: 9,
+    'In Bruges': 9,
+    Amadeus: 10,
+    'Kill Bill': 8,
+    'Little Miss Sunshine': 8.5,
+    X: 7.5
+}
+
+// for(let movie of Object.keys(movieReviews)){console.log(movie)}
+
+// let ratings = Object.values(movieReviews)
+// let totalRating = 0
+// for(let rating of ratings){
+//     totalRating +=rating
+//     // console.log(rating, ratings)
+// }
+// console.log(ratings)
+
+//for of = arrays/strings. for in = objects
+// const jeopardyWinnings = {
+//     regularPlay :  2522700,
+//     watsonChallenge:  300000,
+//     tournamentOfChampions :  500000,
+//     battleOfTheDecades :  100000,
+// }
+
+// for (let prop in jeopardyWinnings){
+//     console.log(prop)
+//     console.log(jeopardyWinnings[prop])
+// }
+// let totalJep = 0
+// for(let prop in jeopardyWinnings){
+//     totalJep += jeopardyWinnings[prop]
+//     console.log(prop)
+// }
+// console.log(totalJep, 'total winnings')
+
+function rollDie(){
+    let roll = Math.floor(Math.random()*6) +1
+    console.log(`Rolled: ${roll}`)
+// }
+// rollDie()
+// rollDie()
+// rollDie()
+// rollDie()
+// rollDie()
+
+}
+
+
+function throwDice(numRolls){
+    for(let i=0; i<numRolls; i++){
+        rollDie()
+    }
+}
+
+throwDice(3)
