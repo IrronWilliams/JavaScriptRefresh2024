@@ -518,9 +518,9 @@ let movieReviews = {
 // }
 // console.log(totalJep, 'total winnings')
 
-function rollDie(){
-    let roll = Math.floor(Math.random()*6) +1
-    console.log(`Rolled: ${roll}`)
+// function rollDie(){
+//     let roll = Math.floor(Math.random()*6) +1
+//     console.log(`Rolled: ${roll}`)
 // }
 // rollDie()
 // rollDie()
@@ -528,13 +528,196 @@ function rollDie(){
 // rollDie()
 // rollDie()
 
+// }
+
+
+// function throwDice(numRolls){
+//     for(let i=0; i<numRolls; i++){
+//         rollDie()
+//     }
+// }
+
+// throwDice(6)
+
+//can only return just 1 value from function. could collect multiple values in array or string
+function addNums(x, y){
+    // console.log(x, y)
+    // return x + y
+    // return [x, y]
+    return `${x}, ${y}`
 }
 
+let answerAddNums = addNums(15,10)
+// console.log('answer is', answerAddNums)
 
-function throwDice(numRolls){
-    for(let i=0; i<numRolls; i++){
-        rollDie()
+function isPurple(color){
+    if(color.toLowerCase() === 'purple'){
+        return true
     }
+    return false
 }
 
-throwDice(3)
+let answerIsPurple = isPurple('purple')
+// console.log(answerIsPurple, 'true or false')
+
+//if returning a boolean, can write return statement on a single line
+function isPurple2(color){
+    return color.toLowerCase() === 'purple'
+}
+
+let answerIsPurple2 = isPurple('ORANGE')
+// console.log(answerIsPurple2, 'true or false')
+
+function containsPurple(arr){
+    for(let a of arr){
+        if(a === 'magenta' || a === 'purple'){
+            return true
+        }
+    }
+    return false
+}
+
+
+let colorList = ['blue', 'pink', 'magenta2', 'purple2']
+
+let answerContainsPurple = containsPurple(colorList)
+console.log(answerContainsPurple, 'contains purple variant?')
+
+
+//for of loops arrays/strings. for in loops over objects
+
+// function isValidPassword(pw, user){
+//     if(pw.length >=8 && pw.indexOf(user) === -1 && pw.indexOf(" ") === -1){
+//         return true
+//     }
+//     return false
+// }
+
+
+function isValidPassword(pw, user){
+    if(pw.length <8){
+        return false
+    }
+    if (pw.indexOf(" ") !== -1){
+        return false
+    }
+    if(pw.indexOf(user) !== -1){
+        return false
+    }
+    return true
+
+}
+let answerIsValidPassword = isValidPassword('chicken12', 'fadfdis')
+console.log(answerIsValidPassword, 'valid password ')
+
+function averageNumbers(arr){
+    let totalNums = 0
+    for(let a of arr){
+        totalNums += a
+        
+    }
+    return totalNums/arr.length
+}
+
+const arrayNums = [75, 76, 80, 95, 100]
+let answerAverageNumbers = averageNumbers(arrayNums)
+console.log(answerAverageNumbers, 'avg num')
+
+// function isPangram(sentence){
+//     let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+//     //remove spaces from sentence --> join
+    
+//     //loop thru sentence
+//     for(let char of sentence){
+//         if(char.indexOf(alphabet)){
+//             return 'This is a Pangram'
+//         }
+//     }
+//     //compare sentence to alphabet
+//      return 'This is not a pangram'
+
+// }
+
+function isPangram(sentence){
+    for(let char of 'abcdefghijklmnopqrstuvwxyz'){
+        if(sentence.indexOf(char) === -1){
+            return false
+        }
+    }
+    return true
+}
+let sentence = 'the five boxing wizards jump quickly'
+let answerIsPangram = isPangram(sentence)
+console.log(answerIsPangram, '     ----pangram?')
+
+
+
+function generateRandomNumber(){
+    let randomNumber = Math.floor(Math.random() *13)
+    console.log(randomNumber, 'randomCard Function')
+    return randomNumber
+
+}
+
+
+function getCard(){
+
+    let randomNumber= generateRandomNumber()
+    // return randomNumber
+
+    const cardDeck = {
+        'K':10,
+        'Q':10,
+        'J':10,
+        '10':10,
+        'A':1,
+        '2':2,
+        '3':3,
+        '4':4,
+        '5':5,
+        '6':6,
+        '7':7,
+        '8':8,
+        '9':9
+    }
+    
+    let randomCard = cardDeck[randomNumber]
+
+    return `Player picked card ${randomNumber} with a value of ${randomCard}`
+
+    console.log(randomCard, 'this is randomcard')
+    
+}
+
+let playerMessage = getCard()
+console.log(playerMessage)
+
+
+
+
+ 
+// }
+
+// let getRandCard = getCard()
+// console.log(getRandCard, 'calling random card')
+
+
+
+
+
+
+// let funcRandomCard = randomNumber()
+// console.log(funcRandomCard, 'functionRandomCard')
+
+// let playingCards = Object.keys(cardDeck)
+
+// let cardValues = Object.values(cardDeck)
+// console.log(playingCards, 'playingCards')
+// console.log(cardValues, 'cardValues')
+// console.log(randomCard, randomCard)
+
+
+// for(let card in cardDeck){
+//     console.log(card)
+    
+// 
