@@ -663,6 +663,7 @@ function generateRandomNumber(){
 function getCard(){
 
     let randomNumber= generateRandomNumber()
+    // console.log(randomNumber, 'logging random number')
     // return randomNumber
 
     const cardDeck = {
@@ -680,17 +681,31 @@ function getCard(){
         '8':8,
         '9':9
     }
-    
-    let randomCard = cardDeck[randomNumber]
+    let cardValues = Object.keys(cardDeck)
+    // console.log(cardValues, 'cardvalues')
+    // console.log(cardValues[cardValues.length -1], 'guesss')
 
-    return `Player picked card ${randomNumber} with a value of ${randomCard}`
+    // let randomCard = cardValues[randomNumber]
+    // let cardValue = cardDeck[randomCard]
 
-    console.log(randomCard, 'this is randomcard')
+    let randomCard =0
+    for(let i=0; i<cardValues.length-1; i++){
+        randomCard = cardValues[randomNumber]
+        // console.log(randomCard, 'randomCardfromdeck')
+
+    }
+
+    // console.log(cardValues, 'card keys')
+    // let playerCard = cardDeck[randomNumber]
+
+    return `Player picked card ${randomCard} with a value of ${cardDeck[randomCard]}`
+
+    // console.log(randomCard, 'this is randomcard')
     
 }
 
 let playerMessage = getCard()
-console.log(playerMessage)
+// console.log(playerMessage)
 
 
 
@@ -721,3 +736,119 @@ console.log(playerMessage)
 //     console.log(card)
     
 // 
+
+
+//scope is variable visbility 
+let bird = 'mandarin duck'
+console.log(bird, 'bird before function')
+
+function birdWatch(){
+    let bird = 'golden phesant'
+    console.log(bird, 'bird in function')
+}
+birdWatch()
+console.log(bird, 'bird after function')
+
+function doubleArr(arr){
+    let doubleNums = []
+    for(let a of arr){
+        doubleNums.push(a*2)
+    }
+    return doubleNums
+}
+
+let doubleArrResults = doubleArr([4,5,6])
+console.log(doubleArrResults, 'doubling array of nums')
+
+//Lexical scope. nested functions are lexically bound tot he scope of its parent outer function
+//cannot call the inner function outside the parent outer function
+function outer(){
+    let movie = 'Amadeus'
+
+    function inner(){
+        let x = 10
+        // let movie = "The Shining"
+
+        function extraInner(){
+            // let movie = 'The Color Purple'
+            console.log(movie.toUpperCase())
+        }
+        extraInner()
+    }
+    inner()
+    // console.log(x)
+}
+// outer()
+
+// function add(x, y){
+//     return x+y
+// }
+
+// const sum = function(x, y){
+//     return x+y
+// }
+// console.log(add(2, 3), 'regular function add')
+// console.log(sum(2,3), 'function expression sum')
+
+function add(x, y){
+    return x+y
+}
+
+const subtract = function(x,y){
+    return x-y
+}
+
+function multiply(x,y){
+    return x*y
+}
+
+const divide = function(x,y){
+    return x/y
+}
+
+const operations = [add, subtract, multiply, divide]
+// console.log(operations, 'logging operations')
+// console.log(operations[3](100, 4))
+
+for(let ops of operations){
+    let result = ops(30,5)
+    // console.log(result)
+    // console.log(ops(30,5))
+    // return ops(10,5)
+    
+
+}
+
+//Higher order functions --> accepts other functions as arguments
+function callThreetimes(f){
+    f()
+    f()
+    f()
+}
+function cry(){
+    console.log('Boo hoo Im sad and crying')
+}
+function rage(){
+    console.log('I am raging now!!!')
+}
+function repeatNTimes(action, num){
+    for(let i=0; i<num; i++){
+        action()
+    }
+}
+
+callThreetimes(cry)
+callThreetimes(rage)
+repeatNTimes(cry, 11)
+
+
+function pickOne(f1, f2){
+    let randomNum = Math.random()
+    console.log(randomNum, 'random number')
+    if(randomNum <=.5){
+        f1()
+    }
+    else f2()
+}
+
+pickOne(cry, rage)
