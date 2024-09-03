@@ -320,8 +320,8 @@ let finalGrade = (student.exams.midterm+student.exams.final)/2
 console.log(finalGrade)
 
 let nums = [1, 2, 3]
-let mystery = [1, 2, 3]
-console.log(nums === mystery)
+// let mystery = [1, 2, 3]
+// console.log(nums === mystery)
 let moreNums = nums
 console.log(moreNums === nums)
 console.log(nums, 'numsArray', moreNums, 'moreNumsArray')
@@ -739,26 +739,26 @@ let playerMessage = getCard()
 
 
 //scope is variable visbility 
-let bird = 'mandarin duck'
-console.log(bird, 'bird before function')
+// let bird = 'mandarin duck'
+// console.log(bird, 'bird before function')
 
-function birdWatch(){
-    let bird = 'golden phesant'
-    console.log(bird, 'bird in function')
-}
-birdWatch()
-console.log(bird, 'bird after function')
+// function birdWatch(){
+//     let bird = 'golden phesant'
+//     console.log(bird, 'bird in function')
+// }
+// birdWatch()
+// console.log(bird, 'bird after function')
 
-function doubleArr(arr){
-    let doubleNums = []
-    for(let a of arr){
-        doubleNums.push(a*2)
-    }
-    return doubleNums
-}
+// function doubleArr(arr){
+//     let doubleNums = []
+//     for(let a of arr){
+//         doubleNums.push(a*2)
+//     }
+//     return doubleNums
+// }
 
-let doubleArrResults = doubleArr([4,5,6])
-console.log(doubleArrResults, 'doubling array of nums')
+// let doubleArrResults = doubleArr([4,5,6])
+// console.log(doubleArrResults, 'doubling array of nums')
 
 //Lexical scope. nested functions are lexically bound tot he scope of its parent outer function
 //cannot call the inner function outside the parent outer function
@@ -837,9 +837,9 @@ function repeatNTimes(action, num){
     }
 }
 
-callThreetimes(cry)
-callThreetimes(rage)
-repeatNTimes(cry, 11)
+// callThreetimes(cry)
+// callThreetimes(rage)
+// repeatNTimes(cry, 11)
 
 
 function pickOne(f1, f2){
@@ -851,4 +851,203 @@ function pickOne(f1, f2){
     else f2()
 }
 
-pickOne(cry, rage)
+// pickOne(cry, rage)
+
+
+//Higher Order Functions. Function returns another function. Outer function makes other versions of function, returning them to be used
+// function multiplyBy(num){
+//     return function(){
+//         console.log('Hello')
+    
+//     }}
+// const mystery = multiplyBy()
+// console.log(mystery)
+// console.log(mystery())
+
+
+// //regular function
+// function multiplyBy(num){
+//     return num *3
+// }
+// //assigning function to a variable
+// const triple = multiplyBy
+// console.log(triple) //accessing function
+// console.log(triple(100)) //calling function
+
+//higher order function--> serves as a function factory that makes different versions of the function
+// function multiplyBy(num){
+//     return function(x){
+//         return x * num
+//     }
+// }
+// const triple = multiplyBy(3)
+// const double = multiplyBy(2)
+// console.log(double(2), 'double')
+// console.log(triple(4), 'triple')
+
+// function compare2Nums(x, y){
+//     return function(nums){
+//         return nums >= x && nums <=y
+//     }
+// }
+
+// let nineTees = compare2Nums(1990, 1999)
+// // nineTees(1992)
+// console.log(nineTees(1989), '90s check')
+
+//Higher order function that accepts 2 years of comparison
+//returns a function that accepts the year to compare
+function compare2Nums(y1, y2){
+    return function(year){
+        return year >=y1 && year <=y2
+    }
+
+}
+// let compare90s= compare2Nums(1990, 1999)
+// // console.log(compare90s(1993))
+
+// let compare80s = compare2Nums(1980, 1989)
+// console.log(compare80s(1990))
+
+
+// function grumpus(){
+//     alert('go away!!!')
+// }
+
+// setTimeout(grumpus, 5000)
+// setTimeout(function(){
+//     alert('come back')
+// }, 7000)
+
+//forEach calls the anonymous function on every item inarray
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
+// numbers.forEach((num)=>{
+//     console.log(num )
+
+// })
+
+// function tripleNums(num){
+//     console.log(num)
+// }
+// numbers.forEach(tripleNums)
+
+// const books = [{
+//     title: 'Good Omens',
+//     author: ['Terry Pratchett', 'Neil Gaiman'],
+//     rating: 4.25
+// },
+// {
+//     title: 'Bone: The Complete Edition',
+//     author: ['Jeff Smith'],
+//     rating: 4.42
+// },
+// {
+//     title: 'American Gods',
+//     author: ['Neil Gaiman'],
+//     rating: 4.11
+// },
+// {
+//     title: 'A Gentleman in Moscow',
+//     author: ['Amor Towles'],
+//     rating: 4.36
+// },
+// ]
+
+// books.forEach(function(book){
+//     console.log(book)
+// })
+// books.forEach(function(book){
+//     console.log(book.title.toUpperCase())
+// })
+
+// books.forEach(function(book, idx){
+//     console.log(book, idx)
+// })
+
+//map applys a function to each item in array and creates a new array
+
+const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
+
+// let doubles = numbers.map(function(num){
+//    return num *2
+// })
+// console.log(numbers)
+// console.log(doubles)
+
+//return an object for each number to assess if even
+let numDetail = numbers.map(function(num){
+    return {
+        number: num,
+        isEven: num % 2 === 0
+    }
+})
+console.log(numDetail)
+console.log('asap'.toUpperCase().split("").join("."))
+
+
+const books = [{
+    title: 'Good Omens',
+    author: ['Terry Pratchett', 'Neil Gaiman'],
+    rating: 4.25
+},
+{
+    title: 'Bone: The Complete Edition',
+    author: ['Jeff Smith'],
+    rating: 4.42
+},
+{
+    title: 'American Gods',
+    author: ['Neil Gaiman'],
+    rating: 4.11
+},
+{
+    title: 'A Gentleman in Moscow',
+    author: ['Amor Towles'],
+    rating: 4.36
+},
+]
+
+let bookTitles = books.map(function(book){
+    return book.title
+})
+console.log(bookTitles)
+console.log(books)
+
+//arrow functions more concise do not have to use return keyword, keyworkd this does not have arrow functions
+// const double = function(x){
+//     return x*2
+// }
+
+// const doubleArrow = (x)=>{
+//     return x*2
+// }
+
+// console.log(double(2), 'reg func expr')
+// console.log(doubleArrow(2), 'arrow func')
+
+// const isEven = num=>{
+//     num %2 === 0
+// }
+
+//regular function expression
+let isEvenRegFunc = function(x){
+    return x %2 === 0
+}
+
+//arrow function
+let isEvenArrowFunc = (x)=>{
+    return x % 2 === 0
+}
+
+//no paran
+let isEvenNoParen = x =>{
+    return x % 2 === 0
+}
+
+//implicit return 
+let isEvenImplicit = x=> {
+    x %2 === 0
+}
+
+//one liner
+let isEvenOneLiner = num => num %2 ===0
